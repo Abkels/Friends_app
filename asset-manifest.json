@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Friends_app/static/css/main.17bfb35c.css",
+    "main.js": "/Friends_app/static/js/main.103c9208.js",
+    "static/js/787.f666ae69.chunk.js": "/Friends_app/static/js/787.f666ae69.chunk.js",
+    "static/media/SEGA.woff": "/Friends_app/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
+    "index.html": "/Friends_app/index.html",
+    "main.17bfb35c.css.map": "/Friends_app/static/css/main.17bfb35c.css.map",
+    "main.103c9208.js.map": "/Friends_app/static/js/main.103c9208.js.map",
+    "787.f666ae69.chunk.js.map": "/Friends_app/static/js/787.f666ae69.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17bfb35c.css",
+    "static/js/main.103c9208.js"
+  ]
+}
