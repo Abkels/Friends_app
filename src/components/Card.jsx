@@ -13,4 +13,6 @@ const Card = ({name, email, id}) => {
   )
 }
 
-export default Card
+export default Card // With React.memo, the Card component will only re-render when its props (name, email, id) change, improving performance in cases where the Cardlist component re-renders due to parent component updates.
+
+// This optimization is optional but can be beneficial in larger applications where you want to minimize unnecessary component renders.

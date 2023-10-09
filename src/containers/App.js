@@ -6,6 +6,9 @@ import tachyons from 'tachyons'
 import SearchBox from '../components/SearchBox'
 import './App.css'
 import Scroll from '../components/Scroll'
+import {useDispatch, useSelector} from 'react-redux';
+import { setRobots, setSearchField } from '../ReduxState/searchRobotsSlice'
+
 
 
 
@@ -62,21 +65,26 @@ import Scroll from '../components/Scroll'
 // USING HOOKS
 
 const App = () => {
-  const [robots, setRobots] = useState([]);
-  const [searchfield, setSearchfield] = useState('');
+  // const [robots, setRobots] = useState([]);
+  // const [searchfield, setSearchfield] = useState('');
+
+  const dispatch = useDispatch();
+  const robots = useSelector((state) => state.searchRobots.robots);
+  const searchField = useSelector((state) => state.searchRobots.searchField)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((res) => res.json())
-      .then((users) => setRobots(users));
-  }, []);
+      .then((users) => dispatch(setRobots(users)));
+  }, [dispatch]);
 
   const onSearchChange = (event) => {
-    setSearchfield(event.target.value);
+    dispatch(setSearchField(event.target.value));
   };
 
+
   const filteredRobots = robots.filter((robot) =>
-    robot.name.toLowerCase().includes(searchfield.toLowerCase())
+    robot.name.toLowerCase().includes(searchField.toLowerCase())
   );
 
   return !robots.length ? (
